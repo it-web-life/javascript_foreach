@@ -1,0 +1,35 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  height: 50px;
+}
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid #ddd;
+  height: 100%;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.item:hover {
+  font-weight: bold;
+  border-bottom: 2px solid #31a0ca;
+}
+.item:focus {
+  outline: none;
+}
+.is-active.item {
+  color: #fff;
+  background: #0b60b7;
+}
+.is-active.item:hover {
+  border-bottom: 2px solid transparent;
+}

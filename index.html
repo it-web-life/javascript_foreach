@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <ul class="list">
+      <li class="item">メニュー1</li>
+      <li class="item">メニュー2</li>
+      <li class="item">メニュー3</li>
+      <li class="item">メニュー4</li>
+    </ul>
+    <button class="clear">全クリア</button>
+    <p id="info"></p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // .item要素を取得して配列で管理する
+    const items = [...document.getElementsByClassName('item')];
+    // テキスト表示領域を取得
+    const info = document.getElementById('info');
+
+    // .item要素がクリックされたら
+    items.forEach((item, index) => {
+      // クリックイベント
+      item.addEventListener('click', () => {
+        // クリック要素に.is-activeをつける
+        item.classList.add('is-active');
+        // 何番目がクリックされたか
+        info.textContent = `${index + 1}番目の要素がクリックされました`
+      });
+    });
+
+    // クリアボタン
+    const clear = [...document.getElementsByClassName('clear')][0];
+    clear.addEventListener('click', () => {
+      items.forEach((item) => {
+        item.classList.remove('is-active');
+      });
+
+      // 文言クリア
+      info.textContent = '';
+    })
+  </script>
+</body>
+</html>
